@@ -328,6 +328,9 @@ function getPlaceholderImageDrawable(value) {
 
 }
 
+function clearCache() {
+  com.facebook.drawee.backends.pipeline.Fresco.getImagePipeline().clearCaches();
+}
 
 function setCacheLimit(numberOfDays) {
 
@@ -361,9 +364,7 @@ function initialize() {
 }
 
 exports.WebImage = WebImage;
-exports.clearCache = function() {
-  com.facebook.drawee.backends.pipeline.Fresco.getImagePipeline().clearCaches();
-};
+exports.clearCache = clearCache;
 
 exports.setCacheLimit = setCacheLimit;
 
